@@ -11,7 +11,7 @@
       }
       /* Optional: Makes the sample page fill the window. */
       html, body {
-        height: 100%;
+        height: 90%;
         margin: 0;
         padding: 0;
       }
@@ -29,14 +29,15 @@
         padding-left: 10px;
       }
     </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src='./assets/js/mapsTest.js'></script>
   </head>
   <body>
     <div id="floating-panel">
-      <input id="address" type="textbox" value="Austin, TX">
+      <input id="address" type="textbox" value="Pet last seen at">
       <input id="submit" type="button" value="Submit">
     </div>
     <div id="map" class="container"></div>
-    <script async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyD_efmoskzkOmgN2hpBiXLBoxnIg9sc2NA&callback=initMap'></script>
+  <script async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyD_efmoskzkOmgN2hpBiXLBoxnIg9sc2NA&callback=initMap'></script> 
   </body>
 </html>
