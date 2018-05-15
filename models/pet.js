@@ -1,4 +1,4 @@
-module.exports = function(sequelize, Datatypes) {
+module.exports = function(sequelize, DataTypes) {
   var Pet = sequelize.define("Pet", {
     animal: {
       type: DataTypes.STRING,
@@ -25,17 +25,26 @@ module.exports = function(sequelize, Datatypes) {
       type: DataTypes.INTEGER,
       allowNull: false,
       validate: {
-        
+        max: 10,
+        min:1
       }
     },
     status: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate:{
+      validate: {
         len: [1, 25]
       }
+    },
+    date: {
+      type: DataTypes.DATE
+    },
+    img: {
+      type: DataTypes.STRING,
+      validate: {
+        isUrl: true
+      }
     }
-    // needs img tag
-    //date added included in sequelize??
-  })
+  });
+  return Pet;
 }
