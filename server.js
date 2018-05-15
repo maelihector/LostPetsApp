@@ -7,7 +7,9 @@ var PORT = process.env.PORT || 8080;
 var db = require("./models");
 
 // parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 // parse application/json
 app.use(bodyParser.json());
 
@@ -15,8 +17,8 @@ app.use(bodyParser.json());
 app.use(express.static("public"));
 
 app.use((req, res, next) => {
-	req.db = db;
-	next();
+  req.db = db;
+  next();
 })
 
 // Routes
@@ -24,8 +26,10 @@ app.use((req, res, next) => {
 //require("./html/api-routes.js")(app);
 
 // Syncing our sequelize models and then starting our Express app
-db.sequelize.sync({ force: true }).then(function() {
-  app.listen(PORT, function() {
+db.sequelize.sync({
+  force: true
+}).then(function () {
+  app.listen(PORT, function () {
     console.log("App listening on PORT " + PORT);
   });
 });
