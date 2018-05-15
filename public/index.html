@@ -1,129 +1,126 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
 
-    <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<head>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
 
-    <link rel="stylesheet" href="css/styles.css" media="screen" title="no title">
-  
-    <!--<link rel="javascript" href="js/scripts.js" >-->
-    </head>
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="css/styles.css" media="screen" title="no title">
+
+  <!--<link rel="javascript" href="js/scripts.js" >-->
+</head>
+
+<body>
 
   <body>
-    
-    <body>
-        <div class="container">
-          <!-- Page Content goes here -->
-          <div class="row">
-              <!--header-->
-              <div class="col s12 m6 l6">
-                  <h5>Header Space</h5>
-              </div> 
-              <div class="col s12 m6 l6">
-                  <h5>Logo Space</h5>
-              </div>
+    <div class="container">
+      <!-- Page Content goes here -->
+      <div class="row">
+        <!--header-->
+        <div class="col s12 m6 l6">
+          <h5>Header Space</h5>
+        </div>
+        <div class="col s12 m6 l6">
+          <h5>Logo Space</h5>
+        </div>
+      </div>
+      <div class="row">
+        <!--************************form*******************************-->
+        <div class="col s12 m12">
+          <H5>Form Space</H5>
+          <!--LOST OR FOUND SWITCH-->
+          <div class="switch">
+            <label>
+              Lost
+              <input type="checkbox">
+              <span class="lever"></span>
+              Found
+            </label>
           </div>
-          <div class="row">
-                <!--************************form*******************************-->
-                <div class="col s12 m12">
-                    <H5>Form Space</H5>
-                    <!--LOST OR FOUND SWITCH-->
-                    <div class="switch">
-                            <label>
-                              Lost
-                              <input type="checkbox">
-                              <span class="lever"></span>
-                              Found
-                            </label>
-                          </div>
-                          <!--ANIMAL TYPE MENU-->
-                          <form class="col s12">
-                                <div class="row">
-                                  <div class="input-field col s12 m6">
-                                    
-                                    <label>Enter Animal Type</label> 
-                                    <br>
-                                    <br>
-                                    <select class="browser-default">
-                                      <option value="" disabled selected>What Animal?</option>
-                                      <option value="1">Cat</option>
-                                      <option value="2">Dog</option>
-                                      <option value="3">Other</option>
-                                    </select>
-                                  </div>
-                                </div>
-                            </form>
-                            <!--ZIP CODE TEXT ENTRY-->
-                              <div class="col s12">
-                                    <div class="row">
-                                            <form class="col s12">
-                                              <div class="row">
-                                                <div class="input-field col s6">
-                                                  <input placeholder="Zip Code" id="Zip" type="text" class="validate">
-                                                  <label for="Zip Code">Location (Zip Code)</label>
-                                                </div>
-                                                <!--COLOR ENTRY MENU-->
-                                                <div class="input-field col s6">
-                                                        <select class="browser-default">
-                                                                <option value="" disabled selected>Color of Animal?</option>
-                                                                <option value="1">Black</option>
-                                                                <option value="2">Brown</option>
-                                                                <option value="3">Grey</option>
-                                                              </select>
-                                                </div>
-                                                <!--SIZE ENTRY MENU-->
-                                                <div class="input-field col s6">
-                                                        <select class="browser-default">
-                                                                <option value="" disabled selected>Size of Animal?</option>
-                                                                <option value="1">Small</option>
-                                                                <option value="2">Medium</option>
-                                                                <option value="3">Large</option>
-                                                              </select>
+          <!--ANIMAL TYPE MENU-->
+          <form class="col s12">
+            <div class="row">
+              <div class="input-field col s12 m6">
 
-                                                </div>
-                                              </div>
-                                            </div>
-                                        </form>
-                                    </div>
+                <label>Enter Animal Type</label>
+                <br>
+                <br>
+                <select class="browser-default">
+                  <option value="" disabled selected>What Animal?</option>
+                  <option value="1">Cat</option>
+                  <option value="2">Dog</option>
+                  <option value="3">Other</option>
+                </select>
+              </div>
+            </div>
+          </form>
+          <!--ZIP CODE TEXT ENTRY-->
+          <div class="col s12">
+            <div class="row">
+              <form class="col s12">
+                <div class="row">
+                  <div class="input-field col s6">
+                    <input placeholder="Zip Code" id="Zip" type="text" class="validate">
+                    <label for="Zip Code">Location (Zip Code)</label>
+                  </div>
+                  <!--COLOR ENTRY MENU-->
+                  <div class="input-field col s6">
+                    <select class="browser-default">
+                      <option value="" disabled selected>Color of Animal?</option>
+                      <option value="1">Black</option>
+                      <option value="2">Brown</option>
+                      <option value="3">Grey</option>
+                    </select>
+                  </div>
+                  <!--SIZE ENTRY MENU-->
+                  <div class="input-field col s6">
+                    <select class="browser-default">
+                      <option value="" disabled selected>Size of Animal?</option>
+                      <option value="1">Small</option>
+                      <option value="2">Medium</option>
+                      <option value="3">Large</option>
+                    </select>
+
+                  </div>
                 </div>
-          </div>
-          <div class="row">
-                <!--footer-->
-                <div class="col s12 m12">
-                    <h5>Footer</h5>
-                </div>
+            </div>
+            </form>
           </div>
         </div>
-      </body>
-    <!--JavaScript at end of body for optimized loading-->
-    <script type="text/javascript" src="js/materialize.min.js">
-    
-    document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('select');
-    var instances = M.FormSelect.init(elems, options);
-    });
-
-     $(document).ready(function() {
-    M.updateTextFields();
-    });
-    
-    </script>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
-
-     document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('select');
-    var instances = M.FormSelect.init(elems, options);
-    });
-    
-
-</script>
-
-
+      </div>
+      <div class="row">
+        <!--footer-->
+        <div class="col s12 m12">
+          <h5>Footer</h5>
+        </div>
+      </div>
+    </div>
   </body>
+  <!--JavaScript at end of body for optimized loading-->
+  <script type="text/javascript" src="js/materialize.min.js">
+    document.addEventListener('DOMContentLoaded', function () {
+      var elems = document.querySelectorAll('select');
+      var instances = M.FormSelect.init(elems, options);
+    });
+
+    $(document).ready(function () {
+      M.updateTextFields();
+    });
+  </script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+    document.addEventListener('DOMContentLoaded', function () {
+      var elems = document.querySelectorAll('select');
+      var instances = M.FormSelect.init(elems, options);
+    });
+  </script>
+
+
+</body>
+
 </html>
