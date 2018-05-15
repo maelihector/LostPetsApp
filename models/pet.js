@@ -1,5 +1,5 @@
-module.exports = function(sequelize, Datatypes) {
-  var Pet = sequelize.define("Pet", {
+module.exports = function(sequelize, DataTypes) {
+  var pets = sequelize.define("pets", {
     animal: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -25,17 +25,29 @@ module.exports = function(sequelize, Datatypes) {
       type: DataTypes.INTEGER,
       allowNull: false,
       validate: {
-        
+        max: 10,
+        min:1
       }
     },
     status: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate:{
+      validate: {
         len: [1, 25]
       }
+    },
+    date: {
+      type: DataTypes.DATE
+    },
+    img: {
+      type: DataTypes.STRING,
+      validate: {
+        isUrl: true
+      }
+    },
+    comment: {
+      type: DataTypes.TEXT
     }
-    // needs img tag
-    //date added included in sequelize??
-  })
+  });
+  return pets;
 }

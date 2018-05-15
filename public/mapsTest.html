@@ -1,43 +1,49 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Google Maps Test Page</title>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta charset="utf-8">
-    <style>
 
-      #map {
-        height: 90%;
-      }
-      /* Optional: Makes the sample page fill the window. */
-      html, body {
-        height: 90%;
-        margin: 0;
-        padding: 0;
-      }
-      #floating-panel {
-        position: absolute;
-        top: 10px;
-        left: 25%;
-        z-index: 5;
-        background-color: #fff;
-        padding: 5px;
-        border: 1px solid #999;
-        text-align: center;
-        font-family: 'Roboto','sans-serif';
-        line-height: 30px;
-        padding-left: 10px;
-      }
-    </style>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src='./assets/js/mapsTest.js'></script>
-  </head>
-  <body>
-    <div id="floating-panel">
-      <input id="address" type="textbox" value="Pet last seen at">
-      <input id="submit" type="button" value="Submit">
-    </div>
-    <div id="map" class="container"></div>
-  <script async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyD_efmoskzkOmgN2hpBiXLBoxnIg9sc2NA&callback=initMap'></script> 
-  </body>
+<head>
+  <title>Google Maps Test Page</title>
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <meta charset="utf-8">
+  <style>
+    #map {
+      height: 90%;
+    }
+
+    /* Optional: Makes the sample page fill the window. */
+
+    html,
+    body {
+      height: 90%;
+      margin: 0;
+      padding: 0;
+    }
+
+    #floating-panel {
+      position: absolute;
+      top: 10px;
+      left: 25%;
+      z-index: 5;
+      background-color: #fff;
+      padding: 5px;
+      border: 1px solid #999;
+      text-align: center;
+      font-family: 'Roboto', 'sans-serif';
+      line-height: 30px;
+      padding-left: 10px;
+    }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src='./assets/js/mapsTest.js'></script>
+</head>
+
+<body>
+  <div id="floating-panel">
+    <input id="address" type="textbox" value="Pet last seen at">
+    <input id="submit" type="button" value="Submit">
+  </div>
+  <div id="map" class="container"></div>
+  <script async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyD_efmoskzkOmgN2hpBiXLBoxnIg9sc2NA&callback=initMap'></script>
+</body>
+
 </html>
