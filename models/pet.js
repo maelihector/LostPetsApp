@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-  var Pet = sequelize.define("Pet", {
+  var pets = sequelize.define("pets", {
     animal: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -44,7 +44,10 @@ module.exports = function(sequelize, DataTypes) {
       validate: {
         isUrl: true
       }
+    },
+    comment: {
+      type: DataTypes.TEXT
     }
   });
-  return Pet;
+  return pets;
 }
