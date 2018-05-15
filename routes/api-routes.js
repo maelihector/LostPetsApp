@@ -35,7 +35,7 @@ module.exports = function(app) {
         console.log(err);
         res.sendStatus(500);
       })
-  })
+  });
 
 
 }

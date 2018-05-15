@@ -29,12 +29,8 @@ module.exports = function(sequelize, DataTypes) {
         min:1
       }
     },
-    status: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [1, 25]
-      }
+    lost: {
+      type: DataTypes.BOOLEAN
     },
     date: {
       type: DataTypes.DATE
