@@ -37,16 +37,26 @@
 </head>
 
 <body>
-  <div id="floating-panel">
-    <input id="zipcode" type="textbox" value="zipcode">
-    <input id="submit" type="button" value="Submit">
+  <div class="container">
+    <p>Search what is near you!</p>
+    <div class="row">
+      <form class="col s12">
+        <div class="row">
+          <div class="input-field col s12">
+            <i class="material-icons prefix">my_location</i>
+            <input id="zipcode" type="text" class="validate" maxlength="5">
+            <label for="zipcode">Your Zip Code</label>
+          </div>
+        </div>
+      </form>
+    </div>
+    <button class="btn btn-primary btn-lg center" id="submit">Enter</button>
   </div>
-  <div id="cardDiv" class="row"></div>
   <div class="container">
 
     <div id="shelters"></div>
   </div>
-    <!-- <script async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyD_efmoskzkOmgN2hpBiXLBoxnIg9sc2NA&callback=initMap'></script> -->
+  <!-- <script async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyD_efmoskzkOmgN2hpBiXLBoxnIg9sc2NA&callback=initMap'></script> -->
   <script src="./js/materialize.js"></script>
   <script src="./js/mapsShelters.js"></script>
 </body>
