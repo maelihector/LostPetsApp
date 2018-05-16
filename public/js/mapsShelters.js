@@ -1,53 +1,15 @@
-function initMap() {
-  // Create a map using the 'Map' constructor.
-  var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 11,
-    center: {
-      lat: 30.2672,
-      lng: -97.7431
-    }
-  });
-  // Access the Google Maps API geocoding service via the 'google.maps.Geocoder' constructor data.
-  var geocoder = new google.maps.Geocoder();
-  // Add event listener
-  document.getElementById('submit').addEventListener('click', function () {
-    geocodeAddress(geocoder, map);
-  });
-}
-
-function geocodeAddress(geocoder, resultsMap) {
-  // Capture the input value of address and save it in var 'address'
-  var address = document.getElementById('address').value;
-  // The 'geocoder.geocode()' method initiates a request to the geocoding service, 
-  // passing it a GeocoderRequest data literal containing the input terms and 
-  // callsback method to execute upon the receipt of the response.
-  geocoder.geocode({
-    'address': address
-  }, function (results, status) {
-    if (status === 'OK') {
-      resultsMap.setCenter(results[0].geometry.location);
-      var marker = new google.maps.Marker({
-        map: resultsMap,
-        position: results[0].geometry.location
-      });
-      console.log(address);
-    } else {
-      alert('Geocode was not successful for the following reason: ' + status);
-    }
-  });
-}
 // AJAX call for list of shelters around the address input
 function getShelters() {
   var url = 'http://api.petfinder.com/shelter.find';
   var apiKey = 'c8a14c54d21aabcd8288a6f32fc6ba90';
-
+  var zip = $("#zipcode").val();
   $.ajax({
     url: url,
     jsonp: "callback",
     dataType: "jsonp",
     data: {
       key: apiKey,
-      'location': 78702,
+      'location': zip,
       output: 'basic',
       format: 'json',
       count: 25
@@ -87,4 +49,4 @@ function getShelters() {
     }
   });
 }
-getShelters();
+$("#submit").on("click", getShelters); 

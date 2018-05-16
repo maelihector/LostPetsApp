@@ -6,10 +6,6 @@
   <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
   <meta charset="utf-8">
   <style>
-    #map {
-      height: 90%;
-    }
-
     /* Optional: Makes the sample page fill the window. */
 
     html,
@@ -20,7 +16,7 @@
     }
 
     #floating-panel {
-      position: absolute;
+      /* position: absolute; */
       top: 10px;
       left: 25%;
       z-index: 5;
@@ -42,16 +38,15 @@
 
 <body>
   <div id="floating-panel">
-    <input id="address" type="textbox" value="Pet last seen at">
+    <input id="zipcode" type="textbox" value="zipcode">
     <input id="submit" type="button" value="Submit">
   </div>
-  <div id="map" class="container"></div>
   <div id="cardDiv" class="row"></div>
   <div class="container">
 
     <div id="shelters"></div>
   </div>
-    <script async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyD_efmoskzkOmgN2hpBiXLBoxnIg9sc2NA&callback=initMap'></script>
+    <!-- <script async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyD_efmoskzkOmgN2hpBiXLBoxnIg9sc2NA&callback=initMap'></script> -->
   <script src="./js/materialize.js"></script>
   <script src="./js/mapsShelters.js"></script>
 </body>
