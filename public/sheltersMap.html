@@ -34,7 +34,10 @@
     }
   </style>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="./css/materialize.css" media="screen,projection" />
 </head>
 
 <body>
@@ -43,84 +46,14 @@
     <input id="submit" type="button" value="Submit">
   </div>
   <div id="map" class="container"></div>
-  <div id="shelters"></div>
-  <script async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyD_efmoskzkOmgN2hpBiXLBoxnIg9sc2NA&callback=initMap'></script>
-  <script>
-    // AJAX call for list of shelters around the address input
+  <div id="cardDiv" class="row"></div>
+  <div class="container">
 
-    function initMap() {
-      // Create a map using the 'Map' constructor.
-      var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 11,
-        center: {
-          lat: 30.2672,
-          lng: -97.7431
-        }
-      });
-      // Access the Google Maps API geocoding service via the 'google.maps.Geocoder' constructor object.
-      var geocoder = new google.maps.Geocoder();
-      // Add event listener
-      document.getElementById('submit').addEventListener('click', function () {
-        geocodeAddress(geocoder, map);
-      });
-    }
-
-    function geocodeAddress(geocoder, resultsMap) {
-      // Capture the input value of address and save it in var 'address'
-      var address = document.getElementById('address').value;
-      // The 'geocoder.geocode()' method initiates a request to the geocoding service, 
-      // passing it a GeocoderRequest object literal containing the input terms and 
-      // callsback method to execute upon the receipt of the response.
-      geocoder.geocode({
-        'address': address
-      }, function (results, status) {
-        if (status === 'OK') {
-          resultsMap.setCenter(results[0].geometry.location);
-          var marker = new google.maps.Marker({
-            map: resultsMap,
-            position: results[0].geometry.location
-          });
-          console.log(address);
-        } else {
-          alert('Geocode was not successful for the following reason: ' + status);
-        }
-      });
-    }
-
-    function getShelters() {
-      var url = 'http://api.petfinder.com/shelter.find';
-      // import petfinder from './assets/js/keys.js';
-      // var apiKey = require("./assets/js/keys.js");
-      var apiKey = 'c8a14c54d21aabcd8288a6f32fc6ba90';
-      // console.log(apiKey);
-
-      $.ajax({
-        url: url,
-        jsonp: "callback",
-        dataType: "jsonp",
-        data: {
-          key: apiKey,
-          'location': 78702,
-          output: 'basic',
-          format: 'json',
-          count: 10
-        },
-        success: function (res) {
-          console.log(res);
-          var shelter = res.petfinder.shelters.shelter;
-          shelter.forEach(element => {
-            var shelterAddress = element.address1.$t;
-            var shelterZip = element.zip.$t;
-            var createDiv = $('<div>').text(shelterAddress + ' ' + shelterZip);
-            console.log(shelterAddress, shelterZip);
-            console.log(element);
-            $('#shelters').prepend(createDiv);
-          });
-        }
-      });
-    }
-    getShelters();
-  </script>
+    <div id="shelters"></div>
+  </div>
+    <script async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyD_efmoskzkOmgN2hpBiXLBoxnIg9sc2NA&callback=initMap'></script>
+  <script src="./js/materialize.js"></script>
+  <script src="./js/mapsShelters.js"></script>
 </body>
 
 </html>
