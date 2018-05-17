@@ -19,17 +19,7 @@ function getShelters() {
       var shelters = res.petfinder.shelters.shelter;
       console.log(shelters);
       shelters.forEach((value) => {
-
-        // // Make sure address is valid else "N/A"
-        // function checkName(){
-        //   if (value.address1.$t === undefined){
-        //     return value.address1.$t = "N/A"
-        //   } else {
-        //     value.address1.$t = value.address1.$t;
-        //   }
-        // }
-        // checkName();
-
+        
         // Take returned data and save it to vars
         let name = value.name.$t;
         let address;
