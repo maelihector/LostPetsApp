@@ -8,7 +8,7 @@ module.exports = function(app) {
       color: req.body.color,
       size: req.body.size,
       zip: req.body.zip,
-      status: req.body.status,
+      lost: req.body.lost,
       date: req.body.date,
       img: req.body.img,
       comment: req.body.comment
@@ -27,7 +27,7 @@ module.exports = function(app) {
         color: req.body.color,
         size: req.body.size,
         zip: req.body.zip,
-        status: req.body.status,
+        lost: req.body.lost,
         date: req.body.date,
       }
     }).then(data => res.sendStatus(200))

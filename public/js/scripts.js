@@ -1,9 +1,27 @@
+//Change statusInput value to boolean
+  function lostBoolean() {
+    var switchState = ($("#statusInput").is(":checked"))? "ON" : "OFF"
+    if (switchState === 'ON') {
+      return false;
+    } else
+    {
+      return true
+    } 
+  };
 
-//test of form
+
+//Post new lost pet
 $("#submitBtn").on("click", function(){
-  console.log($("#zipInput").val());
-  console.log($("#statusInput").val());
-  console.log($("#animalInput").val());
-  console.log($("#colorInput").val());
-  console.log($("#sizeInput").val());
+  $.ajax({
+    type: "POST",
+    url: "/api/pets",
+    data: {
+      zip: $("#zipInput").val().trim(),
+      lost: lostBoolean(),
+      animal: $("#animalInput").val().trim(),
+      color: $("#colorInput").val().trim(),
+      size: $("#sizeInput").val().trim()
+    },
+    success: data => location.reload()
+  })
 });

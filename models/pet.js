@@ -24,13 +24,11 @@ module.exports = function(sequelize, DataTypes) {
     zip: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      validate: {
-        max: 10,
-        min:1
-      }
-    },
+      
+      },
     lost: {
-      type: DataTypes.BOOLEAN
+      type: DataTypes.BOOLEAN,
+      allowNull: false
     },
     date: {
       type: DataTypes.DATE
