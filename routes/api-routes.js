@@ -21,7 +21,7 @@ module.exports = function (app) {
       })
   });
 
-  //View Postings
+  //View Postings With Filters
   app.get("/api/pets", function (req, res) {
     db.pets.findAll({
         where: {
