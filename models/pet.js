@@ -48,7 +48,14 @@ module.exports = function(sequelize, DataTypes) {
     },
     comment: {
       type: DataTypes.TEXT
+    }, 
+    name: {
+      type: DataTypes.STRING
+    },
+    email: {
+      type: DataTypes.STRING
     }
+
   });
   return pets;
 }
