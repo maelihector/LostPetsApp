@@ -2,7 +2,7 @@ var db = require("../models");
 
 module.exports = function (app) {
   //Create Posting
-  app.post("/api/new", function (req, res) {
+  app.post("/api/pets", function (req, res) {
     db.pets.create({
         animal: req.body.animal,
         color: req.body.color,
@@ -37,14 +37,21 @@ module.exports = function (app) {
       })
   });
 
+  // Get all pets postings
+  app.get("/api/all", function(req, res){
+    db.pets.findAll({}).then(function(data) {
+      res.json(data);
+    });
+  });
+
   // View (lost === 1 (true) ) pets
   app.get("/api/lost", function (req, res) {
     db.pets.findAll({
       where: {
         lost: 1
       }
-    }).then(function (results) {
-      res.json(results);
+    }).then(function (data) {
+      res.json(data);
     })
   });
 
@@ -54,8 +61,8 @@ module.exports = function (app) {
       where: {
         lost: 0
       }
-    }).then(function (results) {
-      res.json(results);
+    }).then(function (data) {
+      res.json(data);
     })
   });
 

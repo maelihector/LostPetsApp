@@ -11,6 +11,11 @@ module.exports = function (app) {
     res.sendFile(path.join(__dirname, "../public/index.html"));
   });
 
+  // pets route loads pets.html
+  app.get("/pets", function (req, res) {
+    res.sendFile(path.join(__dirname, "../public/pets.html"));
+  });
+
   // all route loads all.html
   app.get("/all", function (req, res) {
     res.sendFile(path.join(__dirname, "../public/all.html"));
