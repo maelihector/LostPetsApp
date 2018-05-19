@@ -7,6 +7,13 @@ module.exports = function(sequelize, DataTypes) {
         len: [1, 25]
       }
     },
+    name: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      validate:{
+        len: [1, 150]
+      }
+    },
     color: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -30,9 +37,6 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.BOOLEAN,
       allowNull: false
     },
-    date: {
-      type: DataTypes.DATE
-    },
     img: {
       type: DataTypes.STRING,
       validate: {
@@ -42,9 +46,6 @@ module.exports = function(sequelize, DataTypes) {
     comment: {
       type: DataTypes.TEXT
     }, 
-    name: {
-      type: DataTypes.STRING
-    },
     email: {
       type: DataTypes.STRING
     }
