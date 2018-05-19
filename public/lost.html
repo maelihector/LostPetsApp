@@ -2,74 +2,89 @@
 <html>
 
 <head>
-  <!--Import Google Icon Font-->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!--Import materialize.css-->
-  <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
-  <!--Let browser know website is optimized for mobile-->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="css/styles.css" media="screen" title="no title">
+
+    <!--<link rel="javascript" href="js/scripts.js" >-->
 </head>
 
 <body>
-  <nav>
-    <div class="nav-wrapper">
-      <a href="index.html" class="brand-logo">Logo</a>
-      <a href="#" data-target="mobile-demo" class="sidenav-trigger">
-        <i class="material-icons">menu</i>
-      </a>
-      <ul class="right hide-on-med-and-down">
-        <li>
-          <a href="pets.html">Search Pets</a>
-        </li>
-        <li>
-          <a href="found.html">Found</a>
-        </li>
-        <li class="active">
-          <a href="lost.html">Lost</a>
-        </li>
-        <li>
-          <a href="shelters.html">Shelters</a>
-        </li>
-        <li>
-          <a href="aboutUs.html">About Us</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+    <header>
+        <div class="row">
+            <!--header-->
+            <div class="col s12 m6 l6">
+                <h5>Header Space</h5>
+            </div>
+            <div class="col s12 m6 l6">
+                <h5>Logo Space</h5>
+            </div>
+        </div>
+        <nav>
+            <div class="nav-wrapper teal lighten-2">
+                <a href="#" class="brand-logo right">Logo</a>
+                <ul id="nav-mobile" class="left hide-on-med-and-down">
+                    <li>
+                        <a href="index.html">Main</a>
+                    </li>
+                    <li>
+                        <a href="Shelters.html">Shelters</a>
+                    </li>
+                    <li>
+                        <a href="About.html">About</a>
+                    </li>
+                    <li>
+                        <a href="results.html">Current List</a>
+                    </li>
+                    <li>
+                        <a href="found.html">Found Pets</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
 
-  <ul class="sidenav" id="mobile-demo">
-    <li>
-      <a href="search.html">Search Pets</a>
-    </li>
-    <li>
-      <a href="found.html">Found</a>
-    </li>
-    <li class="active">
-      <a href="lost.html">Lost</a>
-    </li>
-    <li>
-      <a href="shelters.html">Shelters</a>
-    </li>
-    <li>
-      <a href="aboutUs.html">About Us</a>
-    </li>
-  </ul>
+    <body>
+        <div class="container">
+            <!--results go here-->
+            <div id="pets"></div>
 
-  <!--results space-->
-  <div class="container">
-    <div class="row">
-      <div id="pets"></div>
-    </div>
-  </div>
+        </div>
 
-  <!--footer-->
-  <div class="col s12 m12">
-    <h5>Footer</h5>
-  </div>
-  <!--JavaScript at end of body for optimized loading-->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script type="text/javascript" src="js/materialize.js"></script>
-  <script type="text/javascript" src="js/lost.js"></script>
+        <div class="row">
+            <!--footer-->
+            <div class="col s12 m12">
+                <h5>Footer</h5>
+            </div>
+        </div>
+        </div>
+    </body>
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="js/materialize.min.js">
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('select');
+            var instances = M.FormSelect.init(elems, options);
+        });
+        $(document).ready(function () {
+            M.updateTextFields();
+        });
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('select');
+            var instances = M.FormSelect.init(elems, options);
+        });
+    </script>
+
+    <!--Public JS File-->
+    <script src="./js/scripts.js"></script>
 </body>
 
 </html>
