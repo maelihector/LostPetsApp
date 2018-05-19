@@ -4,6 +4,7 @@ module.exports = function (app) {
   //Create Posting
   app.post("/api/pets", function (req, res) {
     db.pets.create({
+<<<<<<< HEAD
         animal: req.body.animal,
         color: req.body.color,
         size: req.body.size,
@@ -15,13 +16,26 @@ module.exports = function (app) {
         name: req.body.name,
         email: req.body.email
       }).then(data => res.sendStatus(200))
+=======
+      animal: req.body.animal,
+      color: req.body.color,
+      size: req.body.size,
+      zip: req.body.zip,
+      lost: req.body.lost,
+      date: req.body.date,
+      img: req.body.img,
+      comment: req.body.comment,
+      name: req.body.name,
+      email: req.body.email
+    }).then(data => res.sendStatus(200))
+>>>>>>> 4295c697ce3a0315d3771d0224231c338fb5da85
       .catch(err => {
         console.log(err);
         res.sendStatus(500);
       })
   });
 
-  //View Postings
+  //View Postings With Filters
   app.get("/api/pets", function (req, res) {
     db.pets.findAll({
         where: {
