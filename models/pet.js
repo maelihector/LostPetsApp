@@ -37,9 +37,6 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.BOOLEAN,
       allowNull: false
     },
-    date: {
-      type: DataTypes.DATE
-    },
     img: {
       type: DataTypes.STRING,
       validate: {
@@ -49,9 +46,6 @@ module.exports = function(sequelize, DataTypes) {
     comment: {
       type: DataTypes.TEXT
     }, 
-    name: {
-      type: DataTypes.STRING
-    },
     email: {
       type: DataTypes.STRING
     }
