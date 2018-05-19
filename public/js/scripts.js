@@ -1,35 +1,44 @@
 //Change statusInput value to boolean
-  function lostBoolean() {
+let isLost; 
+function lostBoolean() {
     var switchState = ($("#statusInput").is(":checked"))? "ON" : "OFF"
     if (switchState === 'ON') {
-      return false;
+      return isLost = false
     } else
     {
-      return true
+      return isLost = true
     } 
+    
   };
 
 
 //Post new lost or found pet
 $("#submitBtn").on("click", function(){
   event.preventDefault();
+  lostBoolean();
   $.ajax({
     type: "POST",
     url: "/api/pets",
     data: {
       zip: $("#zipInput").val().trim(),
-      lost: lostBoolean(),
+      lost: isLost,
       animal: $("#animalInput").val().trim(),
       color: $("#colorInput").val().trim(),
       size: $("#sizeInput").val().trim(),
       comment: $("#commentInput").val().trim(),
       email: $("#emailInput").val().trim()
     },
-    success: data => location.reload()
+    success:data => {
+      if (isLost === true) {
+        searchLostPets();
+      } else {
+        searchFoundPets();
+      }
+    }
   })
 });
 
-<<<<<<< HEAD
+
   // This function deletes a todo when the user clicks the delete button
   $("deleteBtn").on("click", function deleteTodo(event) {
     event.stopPropagation();
@@ -42,13 +51,12 @@ $("#submitBtn").on("click", function(){
     })
     
   });
-=======
-function searchLostPets(data) {
 
+function searchLostPets() {
+  window.location = "../lost.html";
 };
 
-function searchFoundPets(data) {
-
+function searchFoundPets() {
+  window.location = "../found.html";
 };
 
->>>>>>> 4295c697ce3a0315d3771d0224231c338fb5da85
