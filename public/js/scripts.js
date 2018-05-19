@@ -10,7 +10,7 @@
   };
 
 
-//Post new lost pet
+//Post new lost or found pet
 $("#submitBtn").on("click", function(){
   $.ajax({
     type: "POST",
@@ -25,4 +25,12 @@ $("#submitBtn").on("click", function(){
     success: data => location.reload()
   })
 });
+
+function searchLostPets(data) {
+
+};
+
+function searchFoundPets(data) {
+
+};
 
