@@ -1,39 +1,48 @@
 //Change statusInput value to boolean
-  function lostBoolean() {
+let isLost; 
+function lostBoolean() {
     var switchState = ($("#statusInput").is(":checked"))? "ON" : "OFF"
     if (switchState === 'ON') {
-      return false;
+      return isLost = false
     } else
     {
-      return true
+      return isLost = true
     } 
+    
   };
 
 
 //Post new lost or found pet
 $("#submitBtn").on("click", function(){
   event.preventDefault();
+  lostBoolean();
   $.ajax({
     type: "POST",
     url: "/api/pets",
     data: {
       zip: $("#zipInput").val().trim(),
-      lost: lostBoolean(),
+      lost: isLost,
       animal: $("#animalInput").val().trim(),
       color: $("#colorInput").val().trim(),
       size: $("#sizeInput").val().trim(),
       comment: $("#commentInput").val().trim(),
       email: $("#emailInput").val().trim()
     },
-    success: data => location.reload()
+    success:data => {
+      if (isLost === true) {
+        searchLostPets();
+      } else {
+        searchFoundPets();
+      }
+    }
   })
 });
 
-function searchLostPets(data) {
-
+function searchLostPets() {
+  window.location = "../lost.html";
 };
 
-function searchFoundPets(data) {
-
+function searchFoundPets() {
+  window.location = "../found.html";
 };
 
