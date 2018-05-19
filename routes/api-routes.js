@@ -40,8 +40,8 @@ module.exports = function (app) {
   });
 
   // Get all pets postings
-  app.get("/api/all", function (req, res) {
-    db.pets.findAll({}).then(function (data) {
+  app.get("/api/all", function(req, res){
+    db.pets.findAll({}).then(function(data) {
       res.json(data);
     });
   });
@@ -66,22 +66,6 @@ module.exports = function (app) {
     }).then(function (data) {
       res.json(data);
     })
-  });
-
-  // DELETE route for deleting todos. We can get the id of the todo to be deleted from
-  // req.params.id
-  app.post("/api/delete/:id", function (req, res) {
-    console.log("Pet Data:");
-    console.log(req.body);
-    db.pets.destroy({
-        where: {
-          id: req.body.id
-        }
-      }).then(data => res.sendStatus(200))
-      .catch(err => {
-        console.log(err);
-        res.sendStatus(500);
-      })
   });
 
 }
