@@ -39,6 +39,12 @@
           <li>
             <a href="results.html">Current List</a>
           </li>
+          <li>
+            <a href="found.html">Found Pets</a>
+          </li>
+          <li>
+            <a href="lost.html">Lost Pets</a>
+          </li>
         </ul>
       </div>
     </nav>
@@ -76,12 +82,12 @@
                       <!--zip code input-->
                       <div class="row">
                         <div class="input-field col s12 m6">
-                          <input placeholder="Enter Your Zip Code" id="Zip" type="text" class="validate">
+                          <input placeholder="Enter Your Zip Code" id="zipInput" type="text" class="validate">
                           <label for="Zip Code">Location (Zip Code)</label>
                         </div>
                         <!--animal type input-->
                         <div class="input-field col s12 m6">
-                          <select class="browser-default">
+                          <select id="animalInput" class="browser-default">
                             <option value="" disabled selected>What Animal?</option>
                             <option value="cat">Cat</option>
                             <option value="dog">Dog</option>
@@ -101,7 +107,7 @@
 
                             <!--COLOR ENTRY MENU-->
                             <div class="input-field col s12 m6">
-                              <select class="browser-default">
+                              <select id="colorInput" class="browser-default">
                                 <option value="" disabled selected>Color of Animal?</option>
                                 <option value="black">Black</option>
                                 <option value="brown">Brown</option>
@@ -112,7 +118,7 @@
                             </div>
                             <!--SIZE ENTRY MENU-->
                             <div class="input-field col s12 m6">
-                              <select class="browser-default">
+                              <select id="sizeInput" class="browser-default">
                                 <option value="" disabled selected>Size of Animal?</option>
                                 <option value="small">Small</option>
                                 <option value="medium">Medium</option>
@@ -130,19 +136,26 @@
                       <form class="col s12 m12">
                         <div class="row">
                           <div class="input-field col s12 m12">
-                            <textarea id="textarea1" class="materialize-textarea"></textarea>
-                            <label for="textarea1">Comments</label>
+                            <textarea id="commentInput" class="materialize-textarea"></textarea>
+                            <label for="commentInput">Comments</label>
                             Please enter any comment about your pet here - such as names or commands it may respond to.
                           </div>
                         </div>
                       </form>
                     </div>
+                    <!--img url input-->
+
+                    <div class="input-field col s12 m6">
+                      <input placeholder="Enter an image url" id="imgInput" type="text" class="validate">
+                      <label for="img">Image (URL)</label>
+                    </div>
                     <!--email input-->
+
                     <div class="col s12">
 
                       <div class="input-field inline">
-                        <input id="email_inline" type="email" class="validate">
-                        <label for="email_inline">Email</label>
+                        <input id="emailInput" type="email" class="validate">
+                        <label for="emailInput">Email</label>
                         <span class="helper-text" data-error="wrong" data-success="right">enter your email address</span>
                       </div>
                     </div>
@@ -150,7 +163,7 @@
 
                   </div>
                   <!--SUBMIT BUTTON-->
-                  <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                  <button id="submitBtn" class="btn waves-effect waves-light" type="submit" name="action">Submit
                     <i class="material-icons right">send</i>
                   </button>
             </form>
