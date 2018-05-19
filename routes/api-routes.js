@@ -14,7 +14,9 @@ module.exports = function(app) {
       comment: req.body.comment,
       name: req.body.name,
       email: req.body.email
-    }).then(data => res.sendStatus(200))
+    }).then(data => {
+      res.status(201).send(data).end();
+    })
       .catch(err => {
         console.log(err);
         res.sendStatus(500);
@@ -23,17 +25,12 @@ module.exports = function(app) {
 
   //View Postings
   app.get("/api/pets", function(req, res) {
-    db.pets.findAll({
-      where: {
-        animal: req.body.animal,
-        color: req.body.color,
-        size: req.body.size,
-        zip: req.body.zip,
-        lost: req.body.lost,
-        date: req.body.date,
-      }
-    }).then(data => res.sendStatus(200))
-      .catch(err => {
+    db.pets.findAll().then(data => {
+      //for (let i = 0; i < data.length; i += 1) {
+        //console.log(data[i].dataValues);
+      //}
+      res.status(200).send(data).end();
+    }).catch(err => {
         console.log(err);
         res.sendStatus(500);
       })
