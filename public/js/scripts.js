@@ -12,6 +12,7 @@
 
 //Post new lost or found pet
 $("#submitBtn").on("click", function(){
+  event.preventDefault();
   $.ajax({
     type: "POST",
     url: "/api/pets",
@@ -20,7 +21,9 @@ $("#submitBtn").on("click", function(){
       lost: lostBoolean(),
       animal: $("#animalInput").val().trim(),
       color: $("#colorInput").val().trim(),
-      size: $("#sizeInput").val().trim()
+      size: $("#sizeInput").val().trim(),
+      comment: $("#commentInput").val().trim(),
+      email: $("#emailInput").val().trim()
     },
     success: data => location.reload()
   })
