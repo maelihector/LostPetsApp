@@ -23,7 +23,7 @@
     "fs": "0.0.1-security",
     "mysql2": "^1.5.3",
     "npm": "^6.0.1",
-    "sequelize": "^4.37.7"
+    "sequelize": "^4.37.8"
   },
   "author": ""
 }

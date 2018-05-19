@@ -13,7 +13,7 @@ module.exports = function (app) {
 
   // pets route loads pets.html
   app.get("/pets", function (req, res) {
-    res.sendFile(path.join(__dirname, "../public/pets.html"));
+    res.sendFile(path.join(__dirname, "../public/results.html"));
   });
 
   // all route loads all.html
