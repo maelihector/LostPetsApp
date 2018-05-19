@@ -29,6 +29,20 @@ $("#submitBtn").on("click", function(){
   })
 });
 
+<<<<<<< HEAD
+  // This function deletes a todo when the user clicks the delete button
+  $("deleteBtn").on("click", function deleteTodo(event) {
+    event.stopPropagation();
+    var id = $(this).data("id");
+    $.ajax({
+      method: "DELETE",
+      url: "/api/pets/" + id
+
+      ,success: data => location.reload()
+    })
+    
+  });
+=======
 function searchLostPets(data) {
 
 };
@@ -37,3 +51,4 @@ function searchFoundPets(data) {
 
 };
 
+>>>>>>> 4295c697ce3a0315d3771d0224231c338fb5da85
