@@ -4,15 +4,17 @@ module.exports = function (app) {
   //Create Posting
   app.post("/api/pets", function (req, res) {
     db.pets.create({
-        animal: req.body.animal,
-        color: req.body.color,
-        size: req.body.size,
-        zip: req.body.zip,
-        lost: req.body.lost,
-        date: req.body.date,
-        img: req.body.img,
-        comment: req.body.comment
-      }).then(data => res.sendStatus(200))
+      animal: req.body.animal,
+      color: req.body.color,
+      size: req.body.size,
+      zip: req.body.zip,
+      lost: req.body.lost,
+      date: req.body.date,
+      img: req.body.img,
+      comment: req.body.comment,
+      name: req.body.name,
+      email: req.body.email
+    }).then(data => res.sendStatus(200))
       .catch(err => {
         console.log(err);
         res.sendStatus(500);

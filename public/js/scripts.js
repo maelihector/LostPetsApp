@@ -25,3 +25,4 @@ $("#submitBtn").on("click", function(){
     success: data => location.reload()
   })
 });
+
