@@ -11,7 +11,9 @@ module.exports = function(app) {
       lost: req.body.lost,
       date: req.body.date,
       img: req.body.img,
-      comment: req.body.comment
+      comment: req.body.comment,
+      name: req.body.name,
+      email: req.body.email
     }).then(data => res.sendStatus(200))
       .catch(err => {
         console.log(err);
