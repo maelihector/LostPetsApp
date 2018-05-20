@@ -11,9 +11,9 @@ module.exports = function (app) {
     res.sendFile(path.join(__dirname, "../public/index.html"));
   });
 
-  // pets route loads pets.html
+  // pets route loads pets.html. AKA Results.html
   app.get("/pets", function (req, res) {
-    res.sendFile(path.join(__dirname, "../public/results.html"));
+    res.sendFile(path.join(__dirname, "../public/pets.html"));
   });
 
   // all route loads all.html
