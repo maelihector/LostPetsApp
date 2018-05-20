@@ -37,7 +37,7 @@ function getShelters() {
         let phone;
         
         if( value.phone.$t ){
-          address = value.phone.$t;
+          phone = value.phone.$t;
         }
         else{
           phone = "N/A";          
@@ -49,10 +49,11 @@ function getShelters() {
         let individualCard = ($("<div>").addClass("card blue-grey"));
         let cardContent = $("<div>").addClass("card-content white-text");
         let cardTitle = $("<span>").addClass("card-title").text(name);
-        let p = $("<p>").text("Address: " + address + " " +city + " " + state + ", " + zip + " " + 
-        "Phone: " + phone + " " + "Email: " + email);
+        let p1 = $("<p>").text("Address:  " + address + " " +city + " " + state + ", " + zip);
+        let p2 = $("<p>").text("Phone:  " + phone + " ");
+        let p3 = $("<p>").text("Email:  " + email);
         // Dump the card with the data onto the html
-        cardDiv.append(individualCard.append(cardContent.append(cardTitle).append(p)));
+        cardDiv.append(individualCard.append(cardContent.append(cardTitle).append(p1).append(p2).append(p3)));
         // Prepend to 'shelters' id DIV
         $("#shelters").prepend(cardDiv);
 
