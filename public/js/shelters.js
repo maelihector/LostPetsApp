@@ -15,11 +15,8 @@ function getShelters() {
       count: 25
     },
     success: function (res) {
-      console.log(res);
       var shelters = res.petfinder.shelters.shelter;
-      console.log(shelters);
       shelters.forEach((value) => {
-
         // Take returned data and save it to vars
         let name = value.name.$t;
         let address;

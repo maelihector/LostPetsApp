@@ -1,7 +1,5 @@
   // Make a get request to our api route that will return every lost pet (lost === 1)
   $.get("/api/lost", function (data) {
-    console.log(data);
-
     // Grab certain values of each pet that our server sends us back
     data.forEach(value => {
       let img = value.img;
