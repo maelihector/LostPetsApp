@@ -1,6 +1,5 @@
   // Make a get request to our api route that will return every pet
   $.get("/api/all", function (data) {
-
     // For each pet that our server sends us back
     data.forEach(value => {
       let img = value.img;
@@ -16,7 +15,7 @@
       } else {
         status = "Found";
       }
-      
+
       // Convert numMonth (dates in #s) to textMonth (months in text)
       // Grab createAt value and save it a var
       let date = value.createdAt;
@@ -51,7 +50,6 @@
       } else {
         textMonth = "December";
       }
-
       // Create Card for each found pet
       let cardDiv = $("<div>").addClass("col s12 m6 l4");
       let card = $("<div>").addClass("card")
@@ -62,7 +60,7 @@
         )
         .append(
           $("<div>").addClass("card-content").attr("style", "height: 160px")
-          .append($("<span>").addClass("card-title").text( status + " in zipcode: " + zip))
+          .append($("<span>").addClass("card-title").text(status + " in zipcode: " + zip))
           .append($("<p>").text(comment))
         )
         .append(
@@ -70,16 +68,17 @@
           // In the '#', enter link that will open an email form to send out keeping email private? like craiglist...
           .append($("<a>").attr("href", "#").text("Email post owner."))
         );
-
+    
       // Dump the card with the data onto the html
       cardDiv.append(card)
-
+    
       // Append to id='pets' 
       $("#pets").append(cardDiv);
+      // Materialize addons
     });
   });
-
-  // Triggers the sideNav when on smFound screens
+  
   $(document).ready(function () {
     $('.sidenav').sidenav();
+    $('select').formSelect();
   });
