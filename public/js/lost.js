@@ -1,4 +1,4 @@
-  // Make a get request to our api route that will return every lost pet
+  // Make a get request to our api route that will return every lost pet (lost === 1)
   $.get("/api/lost", function (data) {
     console.log(data);
 
