@@ -5,7 +5,7 @@
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection" />
     <link type="text/css" rel="stylesheet" href="css/styles.css">
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -55,9 +55,55 @@
             <a href="aboutUs.html">About Us</a>
         </li>
     </ul>
-
-    <!--results space-->
+    <br>
+    <br>
+    <br>
     <div class="container">
+        <div class="row">
+            <div class="col s12">
+                <div class="row" style="margin-bottom: 0;">
+                    <div class="col s4 m4 l2">
+                        <button href="pets.html" class="waves-effect waves-light btn-small" type="reset" name="action" style="margin-top: 20px;">
+                            Reset List
+                        </button>
+                    </div>
+                    <div class="input-field col s8 m8 l4" id="petType">
+                        <select>
+                            <option value="" disabled selected>Choose pet type</option>
+                            <option value="1">Cat</option>
+                            <option value="2">Dog</option>
+                            <option value="3">Other</option>
+                        </select>
+                        <label>Pet Select</label>
+                    </div>
+                    <!--LOST OR FOUND SWITCH-->
+                    <div class="switch col s6 m4 l2" style="padding: 0px;">
+                        <label>
+                            Lost
+                            <input id="statusInput" type="checkbox">
+                            <span class="lever"></span>
+                            Found
+                        </label>
+                    </div>
+                    <div class="switch col s6 m4 l2" style="padding: 0px;">
+                        <label>
+                            Asc
+                            <input id="status" type="checkbox">
+                            <span class="lever"></span>
+                            Desc
+                        </label>
+                    </div>
+                    <div class="input-field col s12 m4 l2">
+                        <i class="material-icons prefix">my_location</i>
+                        <input id="zipcode" type="text" class="validate" maxlength="5">
+                        <label for="zipcode">Zip</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--results space-->
+    <div class="container pets-div">
         <div class="row">
             <div id="pets"></div>
         </div>
