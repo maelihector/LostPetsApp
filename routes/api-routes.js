@@ -41,6 +41,15 @@ module.exports = function (app) {
     });
   });
 
+   // Get all pets postings
+   app.get("/api/desc", function(req, res){
+    db.pets.findAll({
+      order: [['createdAt', 'DESC']]
+    }).then(function(data) {
+      res.json(data);
+    });
+  });
+
   // View (lost === 1 (true) ) pets
   app.get("/api/lost", function (req, res) {
     db.pets.findAll({
