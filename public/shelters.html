@@ -2,71 +2,74 @@
 <html>
 
 <head>
-  <title>Google Maps Test Page</title>
-  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-  <meta charset="utf-8">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <!--Import Google Icon Font-->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!--Import materialize.css-->
-  <link type="text/css" rel="stylesheet" href="./css/materialize.css" media="screen,projection" />
+    <title>Google Maps Test Page</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="./css/materialize.css" media="screen,projection" />
 </head>
 
 <body>
-        <header>
+    <header>
+        <div class="row">
+            <!--header-->
+            <div class="col s12 m6 l6">
+                <h5>Header Space</h5>
+            </div>
+            <div class="col s12 m6 l6">
+                <h5>Logo Space</h5>
+            </div>
+        </div>
+        <nav>
+            <div class="nav-wrapper teal lighten-2">
+                <a href="#" class="brand-logo right">Logo</a>
+                <ul id="nav-mobile" class="left hide-on-med-and-down">
+                    <li>
+                        <a href="index.html">Main</a>
+                    </li>
+                    <li>
+                        <a href="found.html">Found Pets</a>
+                    </li>
+                    <li>
+                        <a href="About.html">About</a>
+                    </li>
+                    <li>
+                        <a href="results.html">Current List</a>
+                    </li>
+                    <li>
+                        <a href="lost.html">Lost Pets</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <p>Search what is near you!</p>
+        <div class="row">
+            <form class="col s12">
                 <div class="row">
-                    <!--header-->
-                    <div class="col s12 m6 l6">
-                        <h5>Header Space</h5>
-                    </div>
-                    <div class="col s12 m6 l6">
-                        <h5>Logo Space</h5>
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">my_location</i>
+                        <input id="zipcode" type="text" class="validate" maxlength="5">
+                        <label for="zipcode">Your Zip Code</label>
                     </div>
                 </div>
-                <nav>
-                    <div class="nav-wrapper teal lighten-2">
-                        <a href="#" class="brand-logo right">Logo</a>
-                        <ul id="nav-mobile" class="left hide-on-med-and-down">
-                            <li>
-                                <a href="index.html">Main</a>
-                            </li>
-                            <li>
-                                <a href="found.html">Found Pets</a>
-                            </li>
-                            <li>
-                                <a href="About.html">About</a>
-                            </li>
-                            <li>
-                                <a href="results.html">Current List</a>
-                            </li>
-                            <li>
-                                <a href="lost.html">Lost Pets</a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </header>
-  <div class="container">
-    <p>Search what is near you!</p>
-    <div class="row">
-      <form class="col s12">
-        <div class="row">
-          <div class="input-field col s12">
-            <i class="material-icons prefix">my_location</i>
-            <input id="zipcode" type="text" class="validate" maxlength="5">
-            <label for="zipcode">Your Zip Code</label>
-          </div>
+            </form>
         </div>
-      </form>
+        <button class="btn btn-primary btn-lg center" id="submit">Enter</button>
     </div>
-    <button class="btn btn-primary btn-lg center" id="submit">Enter</button>
-  </div>
-  <div class="container">
-
-    <div id="shelters"></div>
-  </div>
-  <!-- <script async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyD_efmoskzkOmgN2hpBiXLBoxnIg9sc2NA&callback=initMap'></script> -->
-  <script src="./js/materialize.js"></script>
-  <script src="./js/shelters.js"></script>
+    <!-- Dump cards into this DIV -->
+    <div class="container">
+        <div class="row">
+            <div id="shelters"></div>
+        </div>
+    </div>
+    <!-- <script async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyD_efmoskzkOmgN2hpBiXLBoxnIg9sc2NA&callback=initMap'></script> -->
+    <script src="./js/materialize.js"></script>
+    <script src="./js/shelters.js"></script>
 </body>
+
 </html>

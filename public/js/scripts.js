@@ -54,9 +54,9 @@ $("#submitBtn").on("click", function(){
 
 function searchLostPets() {
   window.location = "../lost.html";
+
 };
 
 function searchFoundPets() {
   window.location = "../found.html";
 };
-
