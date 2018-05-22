@@ -24,13 +24,10 @@ module.exports = function (app) {
     db.pets.findAll({
         where: {
           animal: req.body.animal,
-          color: req.body.color,
-          size: req.body.size,
           zip: req.body.zip,
           lost: req.body.lost,
-          // date: req.body.date,
         }
-      }).then(data => res.sendStatus(200))
+      }).then(data => res.json(data))
       .catch(err => {
         console.log(err);
         res.sendStatus(500);
@@ -40,6 +37,15 @@ module.exports = function (app) {
   // Get all pets postings
   app.get("/api/all", function(req, res){
     db.pets.findAll({}).then(function(data) {
+      res.json(data);
+    });
+  });
+
+   // Get all pets postings
+   app.get("/api/desc", function(req, res){
+    db.pets.findAll({
+      order: [['createdAt', 'DESC']]
+    }).then(function(data) {
       res.json(data);
     });
   });
