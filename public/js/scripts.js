@@ -1,19 +1,18 @@
 //Change statusInput value to boolean
-let isLost; 
-function lostBoolean() {
-    var switchState = ($("#statusInput").is(":checked"))? "ON" : "OFF"
-    if (switchState === 'ON') {
-      return isLost = false
-    } else
-    {
-      return isLost = true
-    } 
-    
-  };
+let isLost;
 
+function lostBoolean() {
+  var switchState = ($("#statusInput").is(":checked")) ? "ON" : "OFF"
+  if (switchState === 'ON') {
+    return isLost = false
+  } else {
+    return isLost = true
+  }
+
+};
 
 //Post new lost or found pet
-$("#submitBtn").on("click", function(){
+$("#submitBtn").on("click", function () {
   event.preventDefault();
   lostBoolean();
   $.ajax({
@@ -28,7 +27,7 @@ $("#submitBtn").on("click", function(){
       comment: $("#commentInput").val().trim(),
       email: $("#emailInput").val().trim()
     },
-    success:data => {
+    success: data => {
       if (isLost === true) {
         searchLostPets();
       } else {
@@ -38,19 +37,20 @@ $("#submitBtn").on("click", function(){
   })
 });
 
-
-  // This function deletes a todo when the user clicks the delete button
-  $("deleteBtn").on("click", function deleteTodo(event) {
-    event.stopPropagation();
-    var id = $(this).data("id");
-    $.ajax({
-      method: "DELETE",
-      url: "/api/pets/" + id
-
-      ,success: data => location.reload()
-    })
-    
+// This triggers deletion of a database record with the matching id 
+$("#deleteId").click(function () {
+  event.preventDefault();
+  $.ajax({
+    type: "POST",
+    url: "/api/delete",
+    data: {
+      id: $(".deleteId").val().trim()
+    },
+    success: data => {
+      console.log(data);
+    }
   });
+});
 
 function searchLostPets() {
   window.location = "../lost.html";

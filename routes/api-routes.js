@@ -4,15 +4,15 @@ module.exports = function (app) {
   //Create Posting
   app.post("/api/pets", function (req, res) {
     db.pets.create({
-      animal: req.body.animal,
-      color: req.body.color,
-      size: req.body.size,
-      zip: req.body.zip,
-      lost: req.body.lost,
-      img: req.body.img,
-      comment: req.body.comment,
-      email: req.body.email
-    }).then(data => res.sendStatus(200))
+        animal: req.body.animal,
+        color: req.body.color,
+        size: req.body.size,
+        zip: req.body.zip,
+        lost: req.body.lost,
+        img: req.body.img,
+        comment: req.body.comment,
+        email: req.body.email
+      }).then(data => res.sendStatus(200))
       .catch(err => {
         console.log(err);
         res.sendStatus(500);
@@ -38,8 +38,8 @@ module.exports = function (app) {
   });
 
   // Get all pets postings
-  app.get("/api/all", function(req, res){
-    db.pets.findAll({}).then(function(data) {
+  app.get("/api/all", function (req, res) {
+    db.pets.findAll({}).then(function (data) {
       res.json(data);
     });
   });
@@ -64,6 +64,31 @@ module.exports = function (app) {
     }).then(function (data) {
       res.json(data);
     })
+  });
+
+  // Delete a specific pet record
+  app.post("/api/delete", function (req, res) {
+    db.pets.destroy({
+      where: {
+        id: req.body.id
+      }
+    }).then(function (data) {
+      res.json(data);
+    });
+  });
+
+  // GET a specific pet record
+  app.get("/api/:pets", function (req, res) {
+    db.pets.findAll({
+        where: {
+          id: req.params.id
+        }
+      }).then(data => res.sendStatus(200))
+      .catch(err => {
+        console.log(data);
+        console.log(err);
+        res.sendStatus(500);
+      });
   });
 
 }
