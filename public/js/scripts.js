@@ -25,7 +25,8 @@ $("#submitBtn").on("click", function () {
       color: $("#colorInput").val().trim(),
       size: $("#sizeInput").val().trim(),
       comment: $("#commentInput").val().trim(),
-      email: $("#emailInput").val().trim()
+      email: $("#emailInput").val().trim(),
+      img: $("#imgInput").val().trim()
     },
     success: data => {
       if (isLost === true) {
