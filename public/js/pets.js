@@ -59,7 +59,7 @@
           .append($("<span>").addClass("card-title").text("Posted: " + textMonth + " " + day + ", " + year))
         )
         .append(
-          $("<div>").addClass("card-content").attr("style", "height: 160px")
+          $("<div>").addClass("card-content").attr("style", "height: 210px")
           .append($("<span>").addClass("card-title").text(status + " in zipcode: " + zip))
           .append($("<p>").text(comment))
         )
@@ -72,7 +72,7 @@
           )
 
           .append(
-            $("<a>").addClass("btn tooltipped waves-effect waves-light").attr("style", "float: right; color:#158c83b5;").attr("data-position", "top").attr("data-tooltip", "Delete post!").attr("href", "#").attr("type", "submit")
+            $("<a>").addClass("btn tooltipped waves-effect waves-light").attr("style", "float: right; color:#158c83b5;").attr("data-position", "top").attr("data-tooltip", "Delete post!").attr("href", "../delete.html").attr("type", "submit")
             .append($("<i>").addClass("material-icons right").text("delete"))
           )
         );

@@ -52,7 +52,7 @@
           .append($("<span>").addClass("card-title").text("Posted: " + textMonth + " " + day + ", " + year))
         )
         .append(
-          $("<div>").addClass("card-content").attr("style", "height: 160px")
+          $("<div>").addClass("card-content").attr("style", "height: 210px")
           .append($("<span>").addClass("card-title").text("Found in zipcode: " + zip))
           .append($("<p>").text(comment))
         )
