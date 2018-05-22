@@ -24,13 +24,10 @@ module.exports = function (app) {
     db.pets.findAll({
         where: {
           animal: req.body.animal,
-          color: req.body.color,
-          size: req.body.size,
           zip: req.body.zip,
           lost: req.body.lost,
-          // date: req.body.date,
         }
-      }).then(data => res.sendStatus(200))
+      }).then(data => res.json(data))
       .catch(err => {
         console.log(err);
         res.sendStatus(500);

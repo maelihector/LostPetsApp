@@ -31,10 +31,7 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: false
     },
     img: {
-      type: DataTypes.STRING,
-      validate: {
-        isUrl: true
-      }
+      type: DataTypes.STRING
     },
     comment: {
       type: DataTypes.TEXT
@@ -42,7 +39,7 @@ module.exports = function (sequelize, DataTypes) {
     email: {
       type: DataTypes.STRING
     }
-
+    
   });
   return pets;
 
