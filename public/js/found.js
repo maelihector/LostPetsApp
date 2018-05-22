@@ -57,11 +57,18 @@
           .append($("<p>").text(comment))
         )
         .append(
-          $("<div>").addClass("card-action")
+          $("<div>").addClass("card-action").attr("style", "background-color:#4fafa252;")
           // In the '#', enter link that will open an email form to send out keeping email private? like craiglist...
-          .append($("<a>").attr("href", "#").text("Email post owner."))
-        );
+          .append(
+            $("<a>").addClass("btn tooltipped waves-effect waves-light").attr("data-position", "top").attr("data-tooltip", "Email post owner").attr("href", "#").attr("type", "submit").attr("style", "color:#158c83b5;")
+            .append($("<i>").addClass("material-icons right").text("send"))
+          )
 
+          .append(
+            $("<a>").addClass("btn tooltipped waves-effect waves-light").attr("style", "float: right; color:#158c83b5;").attr("data-position", "top").attr("data-tooltip", "Delete post!").attr("href", "#").attr("type", "submit")
+            .append($("<i>").addClass("material-icons right").text("delete"))
+          )
+        );
       // Dump the card with the data onto the html
       cardDiv.append(card)
 
@@ -70,7 +77,34 @@
     });
   });
 
-  // Triggers the sideNav when on smFound screens
+  // If the user clicks on the 'reset' button, refresh the page
+  $("#resetFilters").on("click", function () {
+    window.location = "../pets.html";
+  });
+
+  // If the user clicks on the filter radio button 'lost' send them to lost.html
+  $("#lost").on("click", function () {
+    window.location = "../lost.html";
+  });
+
+  // If the user clicks on the filter radio button 'found' send them to found.html
+  $("#found").on("click", function () {
+    window.location = "../found.html";
+  });
+
+  // If the user clicks on the filter radio button 'asc'
+  $("#asc").on("click", function () {
+
+  });
+
+  // If the user clicks on the filter radio button 'desc'
+  $("#desc").on("click", function () {
+
+  });
+
+
   $(document).ready(function () {
     $('.sidenav').sidenav();
+    $('select').formSelect();
+    $('.tooltipped').tooltip();
   });

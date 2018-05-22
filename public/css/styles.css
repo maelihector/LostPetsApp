@@ -12,3 +12,11 @@ img {
   border-color: #45b59b57;
   padding-top: 30px;
 }
+
+i.right {
+  margin-right: 10px;
+}
+
+.switch label .lever {
+  margin: 0px;
+}
