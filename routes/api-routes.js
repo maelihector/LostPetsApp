@@ -9,10 +9,8 @@ module.exports = function (app) {
       size: req.body.size,
       zip: req.body.zip,
       lost: req.body.lost,
-      date: req.body.date,
       img: req.body.img,
       comment: req.body.comment,
-      name: req.body.name,
       email: req.body.email
     }).then(data => res.sendStatus(200))
       .catch(err => {
@@ -30,7 +28,7 @@ module.exports = function (app) {
           size: req.body.size,
           zip: req.body.zip,
           lost: req.body.lost,
-          date: req.body.date,
+          // date: req.body.date,
         }
       }).then(data => res.sendStatus(200))
       .catch(err => {
