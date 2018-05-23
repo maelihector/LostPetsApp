@@ -26,6 +26,7 @@ $("#submitBtn").on("click", function () {
       size: $("#sizeInput").val().trim(),
       comment: $("#commentInput").val().trim(),
       email: $("#emailInput").val().trim(),
+      password: $("#passwordInput").val().trim(),
       img: $("#imgInput").val().trim()
     },
     // Commented out since after form submit the modal will pop up telling them 
@@ -54,11 +55,14 @@ $("#submitBtn").on("click", function () {
 // This triggers deletion of a database record with the matching id 
 $("#deleteId").click(function () {
   event.preventDefault();
+  console.log($("#password").val().trim())
+  console.log($("#email").val().trim())
   $.ajax({
     type: "POST",
     url: "/api/delete",
     data: {
-      id: $(".deleteId").val().trim()
+      email: $("#email").val().trim(),
+      password: $("#password").val().trim()
     },
     success: data => {
       // Empty input values after submit

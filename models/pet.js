@@ -38,8 +38,11 @@ module.exports = function (sequelize, DataTypes) {
     },
     email: {
       type: DataTypes.STRING
+    },
+    password: {
+      type: DataTypes.STRING
     }
-    
+
   });
   return pets;
 
