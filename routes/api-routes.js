@@ -11,7 +11,8 @@ module.exports = function (app) {
         lost: req.body.lost,
         img: req.body.img,
         comment: req.body.comment,
-        email: req.body.email
+        email: req.body.email,
+        password: req.body.password
       }).then(data => res.sendStatus(200))
       .catch(err => {
         console.log(err);
@@ -86,7 +87,9 @@ module.exports = function (app) {
   app.delete("/api/pets/:id", function (req, res) {
     db.pets.destroy({
       where: {
-        id: req.params.id
+        id: req.params.id,
+        email: req.body.email,
+        password: req.body.password
       }
     }).then(function (data) {
       res.json(data);

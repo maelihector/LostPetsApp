@@ -26,6 +26,7 @@ $("#submitBtn").on("click", function () {
       size: $("#sizeInput").val().trim(),
       comment: $("#commentInput").val().trim(),
       email: $("#emailInput").val().trim(),
+      password: $("#passwordInput").val().trim(),
       img: $("#imgInput").val().trim()
     },
 
@@ -90,6 +91,23 @@ $("#deleteId").click(function () {
       } else {
         errorModalOpen();
       }
+      // event.preventDefault();
+      // console.log($("#password").val().trim())
+      // console.log($("#email").val().trim())
+      // $.ajax({
+      //   type: "POST",
+      //   url: "/api/delete",
+      //   data: {
+      //     email: $("#email").val().trim(),
+      //     password: $("#password").val().trim()
+      //   },
+      //   success: data => {
+      //     // Empty input values after submit
+      //     $(".deleteId").val(''),
+      //     $("#email").val(''),
+      //     $("#password").val(''),
+      //     $("#textarea1").val('')
+
     }
   });
 });
