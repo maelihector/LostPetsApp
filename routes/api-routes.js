@@ -14,10 +14,6 @@ module.exports = function (app) {
         email: req.body.email,
         password: req.body.password
       }).then(data => res.sendStatus(200))
-<<<<<<< HEAD
-=======
-
->>>>>>> 2a6a774a81cd1358d882bd00a35173719f154d3d
       .catch(err => {
         console.log(err);
         res.sendStatus(500);
