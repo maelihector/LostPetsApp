@@ -37,10 +37,12 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.TEXT
     },
     email: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      allowNull: false
     },
     password: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      allowNull: false
     }
 
   });
