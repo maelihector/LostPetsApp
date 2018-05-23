@@ -28,14 +28,27 @@ $("#submitBtn").on("click", function () {
       email: $("#emailInput").val().trim(),
       img: $("#imgInput").val().trim()
     },
+    // Commented out since after form submit the modal will pop up telling them 
+    // that their post was added + other info. The 'see updated list' will send them to 
+    // pets.html and that list will be in arder with newest first (hopefully).
+
     success: data => {
-      if (isLost === true) {
-        searchLostPets();
-      } else {
-        searchFoundPets();
-      }
+      // if (isLost === true) {
+      //   searchLostPets();
+      // } else {
+      //   searchFoundPets();
+      // }
+
+      // Empty input form after submit
+      $("#zipInput").val(''),
+      $("#animalInput").val(''),
+      $("#colorInput").val(''),
+      $("#sizeInput").val(''),
+      $("#commentInput").val(''),
+      $("#emailInput").val(''),
+      $("#imgInput").val('')
     }
-  })
+  });
 });
 
 // This triggers deletion of a database record with the matching id 
@@ -48,7 +61,11 @@ $("#deleteId").click(function () {
       id: $(".deleteId").val().trim()
     },
     success: data => {
-      console.log(data);
+      // Empty input values after submit
+      $(".deleteId").val(''),
+      $("#email").val(''),
+      $("#password").val(''),
+      $("#textarea1").val('')
     }
   });
 });
