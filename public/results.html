@@ -2,66 +2,77 @@
 <html>
 
 <head>
-    <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
 
-    <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
 <body>
-        <header>
-                <div class="row">
-                  <!--header-->
-                  <div class="col s12 m6 l6">
-                    <h5>Header Space</h5>
-                  </div>
-                  <div class="col s12 m6 l6">
-                    <h5>Logo Space</h5>
-                  </div>
-                </div>
-                <nav>
-                  <div class="nav-wrapper teal lighten-2">
-                    <a href="#" class="brand-logo right">Logo</a>
-                    <ul id="nav-mobile" class="left hide-on-med-and-down">
-                      <li>
-                        <a href="Shelters.html">Shelters</a>
-                      </li>
-                      <li>
-                        <a href="index.html">Main</a>
-                      </li>
-                      <li>
-                        <a href="results.html">Current List</a>
-                      </li>
-                    </ul>
-                  </div>
-                </nav>
-              </header>
-    <div class="container">
-      
+  <header>
+    <div class="row">
+      <!--header-->
+      <div class="col s12 m6 l6">
+        <h5>Header Space</h5>
+      </div>
+      <div class="col s12 m6 l6">
+        <h5>Logo Space</h5>
+      </div>
+    </div>
+    <nav>
+      <div class="nav-wrapper teal lighten-2">
+        <a href="#" class="brand-logo right">Logo</a>
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
 
+          <li>
+            <a href="index.html">Main Page</a>
+          </li>
+          <li>
+            <a href="About.html">About</a>
+          </li>
+          <li>
+            <a href="Shelters.html">Shelters</a>
+          </li>
 
-        <!--results space-->
-        <div class="row">
+          <li>
+            <a href="found.html">Found Pets</a>
+          </li>
+          <li>
+            <a href="Lost.html">Lost Pets</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
 
-        </div>
-        <div class="row">
+  <!--results space-->
+  <div class="container pets-div">
+    <div class="row">
+      <div class="petList" id="pets"></div>
+    </div>
+  </div>
 
-            <!--footer-->
-            <div class="col s12 m12">
-                <h5>Footer</h5>
-            </div>
+  <div class="container">
+    <div class="row">
 
-        </div>
+      <!--footer-->
+      <div class="col s12 m12">
+        <h5>Footer</h5>
+      </div>
 
     </div>
 
+  </div>
 
-    <!--JavaScript at end of body for optimized loading-->
-    <script type="text/javascript" src="js/materialize.min.js"></script>
-    
+
+  <!--JavaScript at end of body for optimized loading-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/materialize.js"></script>
+  <script type="text/javascript" src="js/pets.js"></script>
+
 </body>
 
 </html>

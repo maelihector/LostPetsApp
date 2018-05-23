@@ -1,0 +1,37 @@
+img {
+  height: 200px;
+  width: 200px;
+}
+
+.card .card-title {
+  font-size: 16px;
+}
+
+.pets-div {
+  border-top: solid;
+  border-color: #45b59b57;
+  padding-top: 30px;
+}
+
+i.right {
+  margin-right: 10px;
+}
+
+.switch label .lever {
+  margin: 0px;
+}
+
+/* Social media icon styles BEGINS here */
+.connect {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-align: center;
+  color: #4aaaa5;
+  margin: 0px 33px 0px;
+}
+
+.box {
+  width: 70px;
+  height: 70px;
+}
+/* Social media icon styles ENDS here */
+

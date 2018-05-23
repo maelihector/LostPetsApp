@@ -4,7 +4,7 @@
   "description": "An application to help people find lost pets.",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js", 
+    "start": "nodemon server.js",
     "test": "mocha --exit"
   },
   "repository": {
@@ -27,7 +27,7 @@
     "mysql2": "^1.5.3",
     "nodemon": "^1.17.4",
     "npm": "^6.0.1",
-    "sequelize": "^4.37.7"
+    "sequelize": "^4.37.8"
   },
   "author": ""
 }
