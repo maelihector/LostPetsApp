@@ -38,15 +38,19 @@ module.exports = function (app) {
   app.get("/api/all", function (req, res) {
     db.pets.findAll({}).then(function (data) {
       res.json(data);
+    }).catch(function(err) {
+      res.json(err);
     });
   });
 
-   // Get all pets postings
+   // Get all pets postings in DESC order
    app.get("/api/desc", function(req, res){
     db.pets.findAll({
       order: [['createdAt', 'DESC']]
     }).then(function(data) {
       res.json(data);
+    }).catch(function(err) {
+      res.json(err);
     });
   });
 
@@ -58,7 +62,9 @@ module.exports = function (app) {
       }
     }).then(function (data) {
       res.json(data);
-    })
+    }).catch(function(err) {
+      res.json(err);
+    });
   });
 
   // View (lost === 0 (not true) ) pets
@@ -69,7 +75,9 @@ module.exports = function (app) {
       }
     }).then(function (data) {
       res.json(data);
-    })
+    }).catch(function(err) {
+      res.json(err);
+    });
   });
 
   // Delete a specific pet record
@@ -80,6 +88,8 @@ module.exports = function (app) {
       }
     }).then(function (data) {
       res.json(data);
+    }).catch(function(err) {
+      res.json(err);
     });
   });
 
