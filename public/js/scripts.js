@@ -8,8 +8,8 @@ function lostBoolean() {
   } else {
     return isLost = true
   }
-
 };
+
 
 //Post new lost or found pet
 $("#submitBtn").on("click", function () {
@@ -28,11 +28,9 @@ $("#submitBtn").on("click", function () {
       email: $("#emailInput").val().trim(),
       img: $("#imgInput").val().trim()
     },
-    // Commented out since after form submit the modal will pop up telling them 
-    // that their post was added + other info. The 'see updated list' will send them to 
-    // pets.html and that list will be in arder with newest first (hopefully).
 
     success: data => {
+      console.log(data.zip);
       // if (isLost === true) {
       //   searchLostPets();
       // } else {
@@ -41,31 +39,57 @@ $("#submitBtn").on("click", function () {
 
       // Empty input form after submit
       $("#zipInput").val(''),
-      $("#animalInput").val(''),
-      $("#colorInput").val(''),
-      $("#sizeInput").val(''),
-      $("#commentInput").val(''),
-      $("#emailInput").val(''),
-      $("#imgInput").val('')
+        $("#animalInput").val(''),
+        $("#colorInput").val(''),
+        $("#sizeInput").val(''),
+        $("#commentInput").val(''),
+        $("#emailInput").val(''),
+        $("#imgInput").val('')
     }
   });
 });
 
-// This triggers deletion of a database record with the matching id 
+function sucessModalOpen() {
+  var elem = document.querySelector('.modalSucess');
+  var postSuccessModal = M.Modal.init(elem);
+
+
+}
+// sucessModalOpen();
+
+function errorModalOpen() {
+  var elem = document.querySelector('.modalError');
+  var postErrorModal = M.Modal.init(elem);
+
+  postErrorModal.close();
+
+}
+// errorModalOpen();
+
+// Delete post function
 $("#deleteId").click(function () {
-  event.preventDefault();
-  $.ajax({
-    type: "POST",
-    url: "/api/delete",
-    data: {
-      id: $(".deleteId").val().trim()
-    },
-    success: data => {
-      // Empty input values after submit
-      $(".deleteId").val(''),
-      $("#email").val(''),
-      $("#password").val(''),
-      $("#textarea1").val('')
+  $.get("/api/all").then(function (data) {
+    inputEmail = $("#emailInput").val().trim();
+    inputPassword = $("#passwordInput").val().trim();
+    for (var i = 0; i < data.length; i++) {
+      var email = data[i].email;
+      var password = data[i].password;
+      var id = data[i].id;
+      // Make sure the inputEmail and db email && inputPassword and db password match before we delete a post
+      if (email === inputEmail && password === inputPassword) {
+        $.ajax({
+            method: "DELETE",
+            url: "/api/pets/" + id
+          })
+          .then(
+            $("#deleteInput").val(''),
+            $("#emailInput").val(''),
+            $("#passwordInput").val('')
+          )
+        sucessModalOpen();
+      } else {
+        errorModalOpen();
+      }
     }
   });
 });
