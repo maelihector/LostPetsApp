@@ -53,12 +53,12 @@
       <form class="col s12">
         <div class="row">
           <div class="input-field inline col s12 m6">
-            <input id="email" type="email" class="validate">
+            <input id="emailInput" type="email" class="validate">
             <label for="email">Email</label>
             <span class="helper-text" data-error="wrong" data-success="right">Enter your registered email address</span>
           </div>
           <div class="input-field col s12 m6">
-            <input id="password" type="password" class="validate">
+            <input id="passwordInput" type="password" class="validate">
             <label for="password">Password</label>
             <span class="helper-text" data-error="wrong" data-success="right">Enter your registered password</span>
           </div>
@@ -86,7 +86,9 @@
           </div>
         </div>
         <!-- *** Modal Trigger *** -->
-        <button data-target="modal1" class="btn modal-trigger waves-effect waves-light" id="deleteId">Submit</button>
+        <!-- Modal Trigger -->
+        <a class="modal-trigger" href="#modal1"></a>
+        <a class="btn waves-effect waves-light" id="deleteId">Submit</a>
       </form>
     </div>
   </div>
@@ -102,9 +104,9 @@
     </div>
   </footer>
 
-  <!-- ****** Modal Structure begis here ********* -->
+  <!-- ****** Modal Structure begins here ********* -->
   <div class="container">
-    <div id="modal1" class="modal modal-fixed-footer">
+    <div id="modal1" class="modal modalSuccess modal-fixed-footer">
       <div class="modal-content">
         <h5 class="connect">Your post has been deleted!</h5>
         <br>
@@ -142,15 +144,30 @@
       </div>
     </div>
   </div>
+    <!-- Modal Trigger -->
+    <a class="modal-trigger" href="#modal2"></a>
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal modalError">
+      <div class="modal-content">
+        <h4>Sorry!</h4>
+        <p>Your email and/or password do not match any in our system. 
+          <br>
+          Please try again or contact us directly and we'll help you figure out what is wrong.</p>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">OK</a>
+      </div>
+    </div>
   <!-- ********* End of Modal Structure ******* -->
- 
+
   <!--JavaScript at end of body for optimized loading-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script type="text/javascript" src="js/materialize.js"></script>
   <script type="text/javascript" src="js/scripts.js"></script>
   <script type="text/javascript">
     $(document).ready(function () {
-      $('.modal').modal();
+    
       $('select').formSelect();
     });
   </script>

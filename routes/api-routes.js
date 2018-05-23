@@ -38,18 +38,20 @@ module.exports = function (app) {
   app.get("/api/all", function (req, res) {
     db.pets.findAll({}).then(function (data) {
       res.json(data);
-    }).catch(function(err) {
+    }).catch(function (err) {
       res.json(err);
     });
   });
 
-   // Get all pets postings in DESC order
-   app.get("/api/desc", function(req, res){
+  // Get all pets postings in DESC order
+  app.get("/api/desc", function (req, res) {
     db.pets.findAll({
-      order: [['createdAt', 'DESC']]
-    }).then(function(data) {
+      order: [
+        ['createdAt', 'DESC']
+      ]
+    }).then(function (data) {
       res.json(data);
-    }).catch(function(err) {
+    }).catch(function (err) {
       res.json(err);
     });
   });
@@ -62,7 +64,7 @@ module.exports = function (app) {
       }
     }).then(function (data) {
       res.json(data);
-    }).catch(function(err) {
+    }).catch(function (err) {
       res.json(err);
     });
   });
@@ -75,26 +77,27 @@ module.exports = function (app) {
       }
     }).then(function (data) {
       res.json(data);
-    }).catch(function(err) {
+    }).catch(function (err) {
       res.json(err);
     });
   });
 
   // Delete a specific pet record
-  app.post("/api/delete", function (req, res) {
+  app.delete("/api/pets/:id", function (req, res) {
     db.pets.destroy({
       where: {
-        id: req.body.id
+        id: req.params.id
       }
     }).then(function (data) {
       res.json(data);
-    }).catch(function(err) {
+    }).catch(function (err) {
       res.json(err);
     });
+
   });
 
   // GET a specific pet record
-  app.get("/api/:pets", function (req, res) {
+  app.get("/api/pets/:id", function (req, res) {
     db.pets.findAll({
         where: {
           id: req.params.id
