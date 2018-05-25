@@ -20,36 +20,52 @@
     <div class="row">
       <!--header-->
       <div class="col s12 m8 l8">
-        <img class="responsive-img" src="../public/assets/logo1.png">
+        <a href="index.html">
+          <img class="responsive-img" src="/assets/logo1.png">
+        </a>
       </div>
       <div class="col s12 m4 l4">
-        <img class="responsive-img" src="../public/assets/dog1.png">
+        <img class="responsive-img" src="/assets/dog1.png">
       </div>
     </div>
     <nav>
       <div class="nav-wrapper teal lighten-2">
-        <a href="#" class="brand-logo right">Logo</a>
-        <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <a href="index.html" class="brand-logo">
+          <img class="responsive-img" src="/assets/dogico2.png">
+        </a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger">
+          <i class="material-icons">menu</i>
+        </a>
+        <ul class="right hide-on-med-and-down">
+          <li class="active">
+            <a href="pets.html">Search Pets</a>
+          </li>
+          <li>
+            <a href="shelters.html">Shelters</a>
+          </li>
+          <li>
+            <a href="about.html">About Us</a>
+          </li>
 
-          <li>
-            <a href="About.html">About</a>
-          </li>
-          <li>
-            <a href="Shelters.html">Shelters</a>
-          </li>
-          <li>
-            <a href="results.html">Current List</a>
-          </li>
-          <li>
-            <a href="found.html">Found Pets</a>
-          </li>
-          <li>
-            <a href="lost.html">Lost Pets</a>
-          </li>
         </ul>
       </div>
     </nav>
-  </header>
+    </header>
+
+<ul class="sidenav" id="mobile-demo">
+<li class="active">
+<a href="pets.html">Search Pets</a>
+</li>
+<li>
+<a href="shelters.html">Shelters</a>
+</li>
+<li>
+<a href="aboutUs.html">About Us</a>
+</li>
+</ul>
+<br>
+<br>
+<br>
 
   <body>
     <div class="container">
@@ -58,7 +74,25 @@
       <div class="row">
         <!--************************form*******************************-->
         <div class="col s12 m12">
-          <H5>Form Space</H5>
+          <div class="section">
+            <div class="card teal lighten-2">
+              <div class="card-content white-text">
+                <span class="card-title"><b>Have you lost or found a pet?</b></span>
+                <p>You've come to the right place! Our website helps connect lost pets to their families. Use our simple form to enter lost pets into our database.
+                  Our database keeps track of pets that have been lost or found. If you want to see our current entries, use the links below - or create a new entry with the form on this page! 
+               </p>
+              </div>
+              <div class="card-action">
+                <a href="found.html">See found pets.</a>
+                <a href="lost.html">See lost pets.</a>
+              </div>
+            </div>
+          </div>
+
+      <div class="row">
+        <!--************************form*******************************-->
+        <div class="col s12 m12">
+          <H5>Create a New Posting!</H5>
           <!--form id below-->
           <form id="lorf-form">
             <!--form id above-->
@@ -180,14 +214,8 @@
 
             </div>
         </div>
-        <div class="row">
-          <!--footer-->
-          <div class="col s12 m12">
-            <h5>Footer</h5>
-          </div>
-        </div>
-      </div>
-
+        
+      </body>
   <!-- ****** Modal Structure begins here ********* -->
   <div class="container">
     <div id="modal1" class="modal">
