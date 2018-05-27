@@ -2,7 +2,7 @@
   "name": "lostpetsapp",
   "version": "1.0.0",
   "description": "An application to help people find lost pets.",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
     "start": "node server.js",
     "watch": "nodemon server.js",
