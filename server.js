@@ -29,4 +29,14 @@ if (process.env.NODE_ENV !== 'test') {
 	});
 }
 
+if (process.env.JAWSDB_URL) {
+	db = sequelize.createConnection(process.env.JAWSDB_URL);
+} else {
+	db = sequelize.createConnection({
+		host: 'zf4nk2bcqjvif4in.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+		user: 'f2cchicw9z1g1uru',
+		password: 'hq72cyw7idh38i5a',
+		database: 'es43okhstgyry1h9'
+	});
+};
 module.exports = app;
