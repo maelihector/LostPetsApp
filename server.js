@@ -39,4 +39,5 @@ if (process.env.JAWSDB_URL) {
 		database: 'es43okhstgyry1h9'
 	});
 };
+app.sync();
 module.exports = app;
