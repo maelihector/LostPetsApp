@@ -1,7 +1,7 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 
-var app = express();
+var app;
 var PORT = process.env.PORT || 3360;
 
 // Requiring our models for syncing
@@ -30,9 +30,9 @@ require("./app/routes/html-routes")(app);
 // }
 
 if (process.env.JAWSDB_URL) {
-	db.sequelize.sync(process.env.JAWSDB_URL);
+	app.sequelize.sync(process.env.JAWSDB_URL);
 } else {
-	db.sequelize.sync({
+	app.sequelize.sync({
 		host: 'zf4nk2bcqjvif4in.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
 		user: 'f2cchicw9z1g1uru',
 		password: 'hq72cyw7idh38i5a',
