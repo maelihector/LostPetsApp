@@ -1,5 +1,6 @@
 'use strict';
 
+//var mysql     = require('mysql2');
 var fs        = require('fs');
 var path      = require('path');
 var Sequelize = require('sequelize');
