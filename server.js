@@ -5,7 +5,7 @@ var app = express();
 var PORT = process.env.PORT || 3306;
 
 // Requiring our models for syncing
-var db = require("app/models/");
+var db = require("./app/models");
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
