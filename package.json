@@ -2,7 +2,7 @@
   "name": "lostpetsapp",
   "version": "1.0.0",
   "description": "An application to help people find lost pets.",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "server.js",
     "test": "mocha --exit"
