@@ -120,3 +120,9 @@ function searchLostPets() {
 function searchFoundPets() {
   window.location = "../found.html";
 };
+
+$(document).ready(function () {
+  M.updateTextFields();
+  $('.modal').modal();
+  $('select').formSelect();
+});

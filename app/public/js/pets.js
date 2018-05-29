@@ -28,7 +28,7 @@ $(document).ready(function () {
     let card = $("<div>").addClass("card")
       .append(
         $("<div>").addClass("card-image")
-        .append($("<img>").attr("src", img))
+        .append($("<img>").attr("src", img).attr("style", "height: 200px; width: 200px;"))
         .append($("<span>").addClass("card-title").text("Posted: " + date))
       )
       .append(

@@ -62,3 +62,9 @@ function getShelters() {
   });
 }
 $("#submit").on("click", getShelters);
+
+$(document).ready(function () {
+  $('.sidenav').sidenav();
+  $('select').formSelect();
+  $('.tooltipped').tooltip();
+});

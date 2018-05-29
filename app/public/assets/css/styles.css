@@ -1,7 +1,6 @@
-img {
-  height: 200px;
-  width: 200px;
-}
+/* Card images settings */
+
+/* logo1 settings */
 
 .card .card-title {
   font-size: 16px;
@@ -22,6 +21,7 @@ i.right {
 }
 
 /* Social media icon styles BEGINS here */
+
 .connect {
   font-family: Georgia, 'Times New Roman', Times, serif;
   text-align: center;
@@ -33,5 +33,5 @@ i.right {
   width: 70px;
   height: 70px;
 }
-/* Social media icon styles ENDS here */
 
+/* Social media icon styles ENDS here */
