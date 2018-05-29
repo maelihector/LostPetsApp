@@ -73,25 +73,11 @@
         <div class="row">
             <div class="col s12">
                 <div class="row" style="margin-bottom: 0;">
-                    <div class="col s4 m4 l2">
-                        <button id="resetFilters" class="waves-effect waves-light btn-small" type="reset" name="action" style="margin-top: 20px;">
-                            Reset List
-                        </button>
-                    </div>
-                    <div class="input-field col s8 m8 l4" id="petType">
-                        <select>
-                            <option value="" disabled selected>Choose pet type</option>
-                            <option value="1">Cat</option>
-                            <option value="2">Dog</option>
-                            <option value="3">Other</option>
-                        </select>
-                        <label>Pet Select</label>
-                    </div>
                     <!--LOST OR FOUND SWITCH-->
-                    <form class="col s6 m4 l2" style="padding: 0px; border: solid #26a59959;">
+                    <form class="col s12 m6 l2" style="padding: 0px; border: solid #26a59959;">
                         <p>
                             <label for="lost">
-                                <input id="lost" class="with-gap" name="group1" type="radio" checked/>
+                                <input id="lost" class="with-gap" name="group1" type="radio" />
                                 <span>Lost</span>
                             </label>
                         </p>
@@ -102,7 +88,7 @@
                             </label>
                         </p>
                     </form>
-                    <form class="col s6 m4 l2" style="padding: 0px; border: solid #26a59959;">
+                    <form class="col s12 m6 l2" style="padding: 0px; border: solid #26a59959;">
                         <p>
                             <label for="asc">
                                 <input id="asc" class="with-gap" name="group1" type="radio" />
@@ -116,10 +102,29 @@
                             </label>
                         </p>
                     </form>
-                    <div class="input-field col s12 m4 l2">
+                    <div class="input-field col s12 m12 l4" id="petType">
+                        <select>
+                            <option value="" disabled selected>Choose pet type</option>
+                            <option id="cat" value="1">Cat</option>
+                            <option id="dog" value="2">Dog</option>
+                            <option id="other" value="3">Other</option>
+                        </select>
+                        <label>Pet Select</label>
+                    </div>
+                    <div class="input-field col s12 m12 l2">
                         <i class="material-icons prefix">my_location</i>
                         <input id="zipcode" type="text" class="validate" maxlength="5">
                         <label for="zipcode">Zip</label>
+                    </div>
+                    <div class="col s4 m4 l2">
+                        <button id="filter" class="waves-effect waves-light btn-small" type="reset" name="action" style="margin-top: 20px;">
+                            Filter List
+                        </button>
+                    </div>
+                    <div class="col s4 m4 l2">
+                        <button id="resetFilters" class="waves-effect waves-light btn-small" type="reset" name="action" style="margin-top: 20px;">
+                            Reset List
+                        </button>
                     </div>
                 </div>
             </div>
