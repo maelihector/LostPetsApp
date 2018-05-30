@@ -78,13 +78,13 @@
                     <form class="col s12 m6 l2" style="padding: 0px; border: solid #26a59959;">
                         <p>
                             <label for="lost">
-                                <input id="lost" class="with-gap" name="group1" type="radio" />
+                                <input id="lost" value="lost" class="with-gap" name="status" type="radio" />
                                 <span>Lost</span>
                             </label>
                         </p>
                         <p>
                             <label for="found">
-                                <input id="found" class="with-gap" name="group1" type="radio" />
+                                <input id="found" value="found" class="with-gap" name="status" type="radio" />
                                 <span>Found</span>
                             </label>
                         </p>
@@ -92,29 +92,30 @@
                     <form class="col s12 m6 l2" style="padding: 0px; border: solid #26a59959;">
                         <p>
                             <label for="asc">
-                                <input id="asc" class="with-gap" name="group1" type="radio" />
+                                <input id="asc" value="asc" class="with-gap" name="petOrder" type="radio" />
                                 <span>Asc</span>
                             </label>
                         </p>
                         <p>
                             <label for="desc">
-                                <input id="desc" class="with-gap" name="group1" type="radio" />
+                                <input id="desc" value="desc" class="with-gap" name="petOrder" type="radio" />
                                 <span>Desc</span>
                             </label>
                         </p>
                     </form>
-                    <div class="input-field col s12 m12 l4" id="petType">
-                        <select>
+                    <div class="input-field col s12 m12 l4">
+                        <select name="petType" id="petType">
                             <option value="" disabled selected>Choose pet type</option>
-                            <option id="cat" value="1">Cat</option>
-                            <option id="dog" value="2">Dog</option>
-                            <option id="other" value="3">Other</option>
+                            <option id="cat" value="cat">Cat</option>
+                            <option id="dog" value="dog">Dog</option>
+                            <option id="other" value="other">Other</option>
+                            <option id="all" value="all">All</option>
                         </select>
                         <label>Pet Select</label>
                     </div>
                     <div class="input-field col s12 m12 l2">
                         <i class="material-icons prefix">my_location</i>
-                        <input id="zipcode" type="text" class="validate" maxlength="5">
+                        <input id="zipcode" type="text" class="validate" maxlength="5" name=zipcode>
                         <label for="zipcode">Zip</label>
                     </div>
                     <div class="col s4 m4 l2">
@@ -152,11 +153,23 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script type="text/javascript" src="./js/materialize.js"></script>
-    <script type="text/javascript" src="./js/pets.js"></script>
-<script>
+    <script type="text/javascript" src="./js/pets2.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelector('select[name="petType"]').onchange = changeEventHandler;
+        }, false);
 
+        function changeEventHandler(event) {
+            // You can use “this” to refer to the selected element.
+            if (!event.target.value) console.log(event.target.value);
+            else console.log(event.target.value);
+        }
 
-</script>
+        window.addEventListener('input', function (e) {
+            console.log("input event detected! coming from this element:", e.target);
+            console.log(e.target.value);
+        }, false);
+    </script>
 </body>
 
 </html>

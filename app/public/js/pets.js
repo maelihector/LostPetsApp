@@ -8,7 +8,15 @@ $(document).ready(function () {
     let img = value.img;
     let zip = value.zip;
     let comment = value.comment;
-    let animal = value.animal;
+    let animal;
+
+    if (value.animal === "cat"){
+      animal = "../assets/images/catlogo.png";
+    } else if (value.animal === "dog"){
+      animal = "../assets/images/dogico2.png";
+    } else {
+      animal = "../assets/images/questionMark.png";
+    }
     // Grab whether pet is listed as lost or found
     let status;
     if (value.lost) {
@@ -32,6 +40,7 @@ $(document).ready(function () {
       .append(
         $("<div>").addClass("card-image")
         .append($("<img>").attr("src", img))
+        .append($("<div>").addClass("col s4").append($("<img>").addClass("circle responsive-img").attr("style", "border-radius: 0;").attr("src", animal)))
         .append($("<span>").addClass("card-title").text("Posted: " + date))
       )
       .append(
@@ -92,13 +101,24 @@ $(document).ready(function () {
   });
 
   $("#lost").on("click", function () {
-    console.log("Lost was selected!");
+
+    console.log($('input[name=status]:checked').val());
+    console.log($('input[name=petOrder]:checked').val());
+    console.log($('#petType').val());
+    console.log($('#zipcode').val());
+
     // Empty petDIV first
     petList.children().remove();
     getLostPets();
   });
+
   $("#found").on("click", function () {
-    console.log("Found was selected!");
+
+    console.log($('input[name=status]:checked').val());
+    console.log($('input[name=petOrder]:checked').val());
+    console.log($('#petType').val());
+    console.log($('#zipcode').val());
+ 
     // Empty petDIV first
     petList.children().remove();
     getFoundPets();
