@@ -62,6 +62,60 @@
     <br>
     <br>
     <br>
+    <ul class="collapsible">
+        <li>
+            <div class="collapsible-header">
+
+                <p>
+                    <label for="lost">
+                        <input id="lost" class="with-gap" name="group1" type="radio" />
+                        <span>Lost</span>
+                    </label>
+                </p>
+                <p>
+                    <label for="found">
+                        <input id="found" class="with-gap" name="group1" type="radio" checked/>
+                        <span>Found</span>
+                    </label>
+                </p>
+
+
+                <button id="resetFilters" class="waves-effect waves-light btn-small" type="reset" name="action" style="margin-top: 20px;">
+                    All
+                </button>
+            </div>
+
+            <div class="collapsible-body">
+                <p>
+                    <label for="asc">
+                        <input id="asc" class="with-gap" name="group1" type="radio" />
+                        <span>Asc</span>
+                    </label>
+                </p>
+                <p>
+                    <label for="desc">
+                        <input id="desc" class="with-gap" name="group1" type="radio" />
+                        <span>Desc</span>
+                    </label>
+                </p>
+
+
+                <input id="zipcode" type="text" class="validate" maxlength="5">
+                <label for="zipcode">Zip</label>
+
+                <div class="input-field col s8 m8 l4" id="petType">
+                    <select>
+                        <option value="" disabled selected>Choose pet type</option>
+                        <option value="1">Cat</option>
+                        <option value="2">Dog</option>
+                        <option value="3">Other</option>
+                    </select>
+                    <label>Pet Select</label>
+                </div>
+            </div>
+
+        </li>
+    </ul>
     <!-- Filters div starts here -->
     <div class="container">
         <div class="row">
@@ -119,14 +173,17 @@
             </div>
         </div>
     </div>
-    <!-- Filters end here Example edit slakdjflaksdjf -->
+
+   
+    <!-- Filters end here -->
+    
 
     <!--results space-->
     <div class="container pets-div">
-        <div class="row">
-            <div id="pets"></div>
+            <div class="row">
+                <div class="petList" id="pets"></div>
+            </div>
         </div>
-    </div>
 
     <!--footer-->
     <footer class="page-footer teal lighten-2">
@@ -165,6 +222,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/materialize.js"></script>
     <script type="text/javascript" src="js/found.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.collapsible').collapsible();
+        });
+    </script>
 
 </body>
 

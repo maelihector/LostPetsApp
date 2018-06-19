@@ -43,7 +43,6 @@ describe('testing html routes', () => {
 				.end((err, res) => {
 					// assertion checks
 					res.should.have.status(200);
-
 					done();
 				});
 		});

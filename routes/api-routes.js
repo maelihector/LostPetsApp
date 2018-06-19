@@ -14,6 +14,10 @@ module.exports = function (app) {
         email: req.body.email,
         password: req.body.password
       }).then(data => res.sendStatus(200))
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2a6a774a81cd1358d882bd00a35173719f154d3d
       .catch(err => {
         console.log(err);
         res.sendStatus(500);
@@ -39,15 +43,21 @@ module.exports = function (app) {
   app.get("/api/all", function (req, res) {
     db.pets.findAll({}).then(function (data) {
       res.json(data);
+    }).catch(function (err) {
+      res.json(err);
     });
   });
 
-   // Get all pets postings
-   app.get("/api/desc", function(req, res){
+  // Get all pets postings in DESC order
+  app.get("/api/desc", function (req, res) {
     db.pets.findAll({
-      order: [['createdAt', 'DESC']]
-    }).then(function(data) {
+      order: [
+        ['createdAt', 'DESC']
+      ]
+    }).then(function (data) {
       res.json(data);
+    }).catch(function (err) {
+      res.json(err);
     });
   });
 
@@ -59,7 +69,9 @@ module.exports = function (app) {
       }
     }).then(function (data) {
       res.json(data);
-    })
+    }).catch(function (err) {
+      res.json(err);
+    });
   });
 
   // View (lost === 0 (not true) ) pets
@@ -70,23 +82,29 @@ module.exports = function (app) {
       }
     }).then(function (data) {
       res.json(data);
-    })
+    }).catch(function (err) {
+      res.json(err);
+    });
   });
 
   // Delete a specific pet record
-  app.post("/api/delete", function (req, res) {
+  app.delete("/api/pets/:id", function (req, res) {
     db.pets.destroy({
       where: {
+        id: req.params.id,
         email: req.body.email,
         password: req.body.password
       }
     }).then(function (data) {
       res.json(data);
+    }).catch(function (err) {
+      res.json(err);
     });
+
   });
 
   // GET a specific pet record
-  app.get("/api/:pets", function (req, res) {
+  app.get("/api/pets/:id", function (req, res) {
     db.pets.findAll({
         where: {
           id: req.params.id
